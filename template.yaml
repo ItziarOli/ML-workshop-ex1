@@ -54,7 +54,7 @@ Resources:
         Variables:
           OUTPUT_BUCKET: itziar.training.videotranscode
           INPUT_BUCKET: itziar.training.videotranscode
-      Policies: !Sub "arn:aws:iam::${AWS::AccountId}:policy/S3_Transcribe_Policy"
+      Policies: !Sub "arn:aws:iam::${AWS::AccountId}:policy/s3_transcribe_policy_io"
 
   TranslateAndSubtitleFunction:
     Type: AWS::Serverless::Function
@@ -101,7 +101,6 @@ Resources:
       Policies: 
         - !Sub "arn:aws:iam::${AWS::AccountId}:policy/S3_Transcribe_Policy"
         - !Sub "arn:aws:iam::aws:policy/AWSElementalMediaConvertFullAccess"
-
 
 Outputs:
   VideoTranslaterStateMachineArn:
